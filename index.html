@@ -6,16 +6,18 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9Fr9fNYMC8apT7rGngegm8rJ
 
 <script>
 function initMap() {
-  var latlng = new google.maps.LatLng(35.6466, 139.7114);
+  var latlng = new google.maps.LatLng(26.212022, 127.712896);
   var mapOptions = {
-    zoom: 15,
+    zoom: 12,
     center: latlng
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   var ctaLayer = new google.maps.KmlLayer({
-    preserveViewport: false,
+    suppressInfoWindows: true,
+    preserveViewport: true,
     url: 'https://ameyamashiro.github.io/google-calendar-kml/kml.kml?cache=1111',
+    map: map
   });
-  ctaLayer.setMap(map);
+  // ctaLayer.setMap(map);
 }
 </script>
