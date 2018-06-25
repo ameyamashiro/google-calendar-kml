@@ -1,9 +1,11 @@
+<div id="map-canvas" style="width: 500px; height: 500px;"></div>
+
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9Fr9fNYMC8apT7rGngegm8rJaPbEw6DM&callback=initMap">
 </script>
 
 <script>
-function initialize() {
+function initMap() {
   var latlng = new google.maps.LatLng(35.6466, 139.7114);
   var mapOptions = {
     zoom: 15,
@@ -11,9 +13,8 @@ function initialize() {
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   var ctaLayer = new google.maps.KmlLayer({
-    url: 'https://ameyamashiro.github.io/google-calendar-kml/kml.kml'
+    url: 'https://ameyamashiro.github.io/google-calendar-kml/kml.kml',
   });
   ctaLayer.setMap(map);
 }
-google.maps.event.addDomListener(window, 'load', initialize);
 </script>
