@@ -12,12 +12,24 @@ function initMap() {
     center: latlng
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  var ctaLayer = new google.maps.KmlLayer({
+  var kmlLayerTop = new google.maps.KmlLayer({
     suppressInfoWindows: true,
     preserveViewport: true,
-    url: 'https://ameyamashiro.github.io/google-calendar-kml/top.kml',
-    map: map
+    url: 'https://ameyamashiro.github.io/google-calendar-kml/top.kml'
   });
-  // ctaLayer.setMap(map);
+  var kmlLayerMid = new google.maps.KmlLayer({
+    suppressInfoWindows: true,
+    preserveViewport: true,
+    url: 'https://ameyamashiro.github.io/google-calendar-kml/mid.kml'
+  });
+  var kmlLayerBottom = new google.maps.KmlLayer({
+    suppressInfoWindows: true,
+    preserveViewport: true,
+    url: 'https://ameyamashiro.github.io/google-calendar-kml/bottom.kml'
+  });
+
+  kmlLayerTop.setMap(map);
+  kmlLayerMid.setMap(map);
+  kmlLayerBottom.setMap(map);
 }
 </script>
